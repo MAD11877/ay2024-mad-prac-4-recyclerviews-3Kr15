@@ -34,7 +34,7 @@ public class ListActivity extends AppCompatActivity {
             int description = new Random().nextInt(99999999);
             boolean followed = new Random().nextBoolean();
 
-            User user = new User("John Doe", "MAD Developer", 1, false);
+            User user = new User("John Doe", "MAD Developer", 1, false, 1);
             user.setName("Name "+ (name));
             user.setDescription("Description "+(description));
             user.setFollowed(followed);
