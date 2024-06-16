@@ -2,14 +2,18 @@ package sg.edu.np.mad.madpractical4;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,6 +26,29 @@ public class MainActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        TextView tvName = findViewById(R.id.tvName);
+        TextView tvDescription = findViewById(R.id.tvDescription);
+        Button btnFollow = findViewById(R.id.btnFollow);
+
+        Intent receiving = getIntent();
+        String userName =  receiving.getStringExtra("name");
+        String userDescription = receiving.getStringExtra("description");
+
+        tvName.setText(userName);
+        tvDescription.setText(userDescription);
+        btnFollow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (0 == 0) {
+                    btnFollow.setText("UNFOLLOW");
+                    Toast.makeText(MainActivity.this, "Unfollowed", Toast.LENGTH_SHORT).show();
+                } else {
+                    btnFollow.setText("FOLLOW");
+                    Toast.makeText(MainActivity.this, "Followed", Toast.LENGTH_SHORT).show();
+                }
+            }
         });
 
     }

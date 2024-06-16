@@ -1,5 +1,6 @@
 package sg.edu.np.mad.madpractical4;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -40,6 +41,10 @@ public class ListActivity extends AppCompatActivity {
             user.setFollowed(followed);
             myUser_List.add(user);
         }
+
+        Intent getFollowed  = new Intent("senduserdata");
+        getFollowed.putExtra("userlist", myUser_List);
+        sendBroadcast(getFollowed);
 
         UserAdapter userAdapter = new UserAdapter(myUser_List, this);
         RecyclerView recyclerView = findViewById(R.id.recyclerView);

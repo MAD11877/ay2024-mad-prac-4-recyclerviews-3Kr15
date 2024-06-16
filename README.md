@@ -5,7 +5,7 @@ Follow the instructions below to complete your app.
 1. Create a `List` of 20 `User` objects in the `ListActivity`. Randomize the `name`, `descriptions` and value of `followed`.
 
 2. Replace the `ImageView` in the `ListActivity` with a `RecyclerView`. Populate the `RecyclerView` with the list created in previous step.<br/>
-
+ 
 ![RecyclerSingleView](/images/RV_Layout.png)
 ![RecyclerView](/images/RV_List.png)
 
