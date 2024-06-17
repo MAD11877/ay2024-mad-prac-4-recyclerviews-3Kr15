@@ -35,17 +35,12 @@ public class ListActivity extends AppCompatActivity {
             int description = new Random().nextInt(99999999);
             boolean followed = new Random().nextBoolean();
 
-            User user = new User("John Doe", "MAD Developer", 1, false, 1);
+            User user = new User("John Doe", "MAD Developer", 1, false);
             user.setName("Name "+ (name));
             user.setDescription("Description "+(description));
             user.setFollowed(followed);
             myUser_List.add(user);
         }
-
-        Intent getFollowed  = new Intent("senduserdata");
-        getFollowed.putExtra("userlist", myUser_List);
-        sendBroadcast(getFollowed);
-
         UserAdapter userAdapter = new UserAdapter(myUser_List, this);
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
